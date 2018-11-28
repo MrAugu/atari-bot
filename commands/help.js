@@ -7,6 +7,12 @@ module.exports = {
     name: 'help',
     description: 'Sends you the bot\'s commands',
     async execute(bot, message, args) {
-        message.channel.send("You have summoned ben shapiro")
-    },
+        const embed = new Dicord.RichEmbed()
+        .setTitle("Avari Help Menu")
+        .setThumbnail(bot.user.avatarURL)
+        .addField("Misc Commands", "`help`, `ping`")
+        .setColor("RANDOM")
+        .setTimestamp();
+        message.channel.send(embed);
+      },
 };
